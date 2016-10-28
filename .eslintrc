@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "tough/config/common",
+    "tough/config/node",
+    "tough/config/esnext",
+    "tough/config/react",
+    "tough/config/browser"
+  ],
+  "settings": {
+    "import/extensions": [ ".js", ".jsx" ]
+  },
+  "rules": {
+    "indent": [ 2, 2, { "SwitchCase": 1 } ],
+    "react/jsx-indent": [ 2, 2 ],
+    "react/jsx-indent-props": [ 2, 2 ],
+
+    "no-extra-parens": [ 2, "functions" ],
+    "react/jsx-no-literals": 0,
+    "no-undef": 2,
+
+    "no-invalid-this": 0,
+    "immutable/no-mutation": 0,
+  }
+}
