@@ -40,8 +40,19 @@ export default () => (
       transition={ [ 'fade', 'slide', 'zoom' ] }
       transitionDuration={ 500 }
     >
-      <Slide textColor="main" transition={ [ 'zoom' ] }>
-        React: https://slides.com/mistadikay/time-to-react/
+      <Slide
+        notes={ `
+          Okay, thanks for coming. So I think you guys already heard about React.
+          There are lots of articles and talks introducing React, so I guess what I'll try to do
+          here with my talk is summarise it and add some of the thoughts I have.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading fit={ true } textColor="heading">Time To React</Heading>
+        <Heading fit={ true } textColor="heading">
+          Introduction to React and Redux ecosystem
+        </Heading>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         React is so popular, why such hype, old ways are fine

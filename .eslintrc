@@ -16,6 +16,7 @@
 
     "no-extra-parens": [ 2, "functions" ],
     "react/jsx-no-literals": 0,
+    "react/jsx-curly-spacing": 0,
     "no-undef": 2,
 
     "no-invalid-this": 0,
