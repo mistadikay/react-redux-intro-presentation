@@ -54,8 +54,37 @@ export default () => (
           Introduction to React and Redux ecosystem
         </Heading>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        React is so popular, why such hype, old ways are fine
+      <Slide
+        notes="So yeah. React. It's really everywhere and it's growing fast."
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size="5" textColor="heading">Internet nowadays</Heading>
+        <Image src={ images.reactEverywhere } width="80%" />
+      </Slide>
+      <Slide
+        notes={ `
+          Some people are sceptic and they don't understand why the heck they need to change their
+          habits and learn yet another javascript bloody library.
+        ` }
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size="5" textColor="heading">Holy shit, another Javascript library.</Heading>
+        <div>
+          <Image src={ images.unamused } width="37%" />
+        </div>
+        <div>
+          <Image src={ images.zeroDays } width="37%" />
+        </div>
+      </Slide>
+      <Slide
+        notes="People don't want to change something that is working already"
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size="5" textColor="heading">Old ways are working fine.</Heading>
+        <Image src={ images.fine } width="100%" />
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         Describe frontend Problems
