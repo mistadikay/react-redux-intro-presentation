@@ -116,7 +116,7 @@ export default () => (
           ahahaha)
         ` }
         textColor="main"
-        transition={ [ 'fade' ] }
+        transition={ [ 'slide' ] }
       >
         <Heading size="5" textColor="heading">Problems on Frontend</Heading>
         <List>
@@ -153,8 +153,30 @@ export default () => (
           </Appear>
         </List>
       </Slide>
-      <Slide textColor="main" transition={ [ 'fade' ] }>
-        Describe possible solutions, but too much manual work or huge frameworks
+      <Slide
+        notes={ `
+          TODO: revisit the solutions along with problems
+          Of course, solutions exist, and it's totally possible to solve those problems, but it
+          either requires a lot of manual work or using huge and slow frameworks like Ember or
+          Angular
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size="5" textColor="heading">Possible solutions</Heading>
+        <Appear>
+          <List>
+            <ListItem>make only small DOM changes</ListItem>
+            <ListItem>work in detached DOM and then reattach it</ListItem>
+            <ListItem>manually destruct DOM references and UI entities</ListItem>
+            <ListItem>manually keep track on all event handlers</ListItem>
+            <ListItem>work out some kind of a code convention</ListItem>
+            <ListItem>use huge and slow frameworks doing too much</ListItem>
+            <ListItem>
+              attempts to modularise UI pieces by using string-based template engines
+            </ListItem>
+          </List>
+        </Appear>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         <Heading fir="true" textColor="heading">React to the rescue</Heading>
