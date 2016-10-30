@@ -179,7 +179,7 @@ export default () => (
         </Appear>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
-        <Heading fir="true" textColor="heading">React to the rescue</Heading>
+        <Heading fit={ true } textColor="heading">React to the rescue</Heading>
         less DOM manipulations -> better UI performance
         event handlers attach/detach automatically -> no more memory leaks
         we do much less manually -> apps are simpler and more scalable
@@ -205,16 +205,6 @@ export default () => (
         reactivity: reactive/declarative render
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
-        React beyound DOM: React Native, React Blessed
-      </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        React alternatives are awesome too, use them — the idea is important,
-        also React has bigger community
-      </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        examples in production
-      </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
         <Heading>Redux</Heading>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
@@ -233,6 +223,16 @@ export default () => (
       <Slide textColor="main" transition={ [ 'slide' ] }>
         dev-tools with time travel, data visualization, etc.
         <Image src={ images.reduxDebug } />
+      </Slide>
+      <Slide textColor="main" transition={ [ 'slide' ] }>
+        React beyound DOM: React Native, React Blessed
+      </Slide>
+      <Slide textColor="main" transition={ [ 'slide' ] }>
+        React alternatives are awesome too, use them — the idea is important,
+        also React has bigger community. React influenced Ember and Angular
+      </Slide>
+      <Slide textColor="main" transition={ [ 'slide' ] }>
+        examples in production
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         conclusion: why react and redux
