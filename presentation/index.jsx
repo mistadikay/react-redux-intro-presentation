@@ -1,8 +1,12 @@
 import React from 'react';
 import {
+  Appear,
   Deck,
   Heading,
   Image,
+  List,
+  ListItem,
+  S,
   Slide,
   Spectacle
 } from 'spectacle';
@@ -18,6 +22,7 @@ import * as images from '../assets';
 
 // styles
 import 'normalize.css';
+import './global.css';
 import 'spectacle/lib/themes/default/index.css';
 
 preloader(images);
@@ -79,17 +84,76 @@ export default () => (
         </div>
       </Slide>
       <Slide
-        notes="People don't want to change something that is working already"
+        notes={ `
+          People don't want to change something that is working already
+        ` }
         textColor="main"
         transition={ [ 'fade' ] }
       >
         <Heading size="5" textColor="heading">Old ways are working fine.</Heading>
         <Image src={ images.fine } width="100%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Describe frontend Problems
+      <Slide
+        notes={ `
+          TODO: revisit these problems
+          And while I can understand these people, we all cannot deny that there are (were) lots of
+          problems when working on user interfaces.
+
+          Performance: any changes to DOM, even when just reading information (getComputedStyle,
+          offsetHeight) causes repaints or reflow which can be a very visible problem
+
+          Efficiency: because we do everything manually — creating DOM, adding events, etc. — it's
+          easy to lose track of node reference or something and create memory leaks
+
+          Complexity: again, because we do everything manually we have to think about it all the
+          time and the more complexity of our apps grow, the more time we need to support these big
+          piles of shit.
+
+          Scalability: when people asked to add a new feature, it can be the pain in the ass and
+          estimates can be enormous and inadecvate
+
+          Reusability: reusing UI code is not obvious, most of the people just copy-past (lazada
+          ahahaha)
+        ` }
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size="5" textColor="heading">Problems on Frontend</Heading>
+        <List>
+          <Appear>
+            <ListItem>
+              <S type="bold">Performance</S>
+               - making changes to the DOM is slow due to repaint and reflow
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Efficiency</S>
+              - you can end up creating memory leaks by losing track of node
+              references or by forgetting to detach event handlers
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Complexity</S>
+              - hard to maintain, hard to understand
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Scalability</S>
+              - hard to add new features and change design
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Reusability</S>
+              - hard to reuse UI code across different websites and applications
+            </ListItem>
+          </Appear>
+        </List>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
+      <Slide textColor="main" transition={ [ 'fade' ] }>
         Describe possible solutions, but too much manual work or huge frameworks
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
