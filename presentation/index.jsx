@@ -42,7 +42,7 @@ export default () => (
       bgColor="primary"
       progress="bar"
       textColor="main"
-      transition={ [ 'fade', 'slide', 'zoom' ] }
+      transition={ [ 'fade', 'slide', 'zoom', 'spin' ] }
       transitionDuration={ 500 }
     >
       <Slide
@@ -195,21 +195,59 @@ export default () => (
         <Heading size="2" textColor="heading">React</Heading>
         <Image src={ images.react } width="45%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        <Heading fit={ true } textColor="heading">React to the rescue</Heading>
-        less DOM manipulations -> better UI performance
-        event handlers attach/detach automatically -> no more memory leaks
-        we do much less manually -> apps are simpler and more scalable
-        declarative code -> easy to reason about
-        components -> reusability, encapsulation, testability
-        it's just a library, not opinionated framework
-        UI development is standardised
+      <Slide
+        bgDarken="0.7"
+        bgImage={ images.lego }
+        notes={ `
+          It's the most fundamental part of React, first-class citizen.
+          It's like lego-cubes you built your interface from.
+          They encapsulate DOM-structure so you don't have to know about it from outside.
+          They encapsulate DOM-logic, so you just work with the state/API and components do the
+          rest inside them.
+          They automate and optimize all DOM interactions, so you don't have to do manual work and
+          worry about memory leaks and low FPS.
+          They're highly reusable and can be distributed, for example, through npm for using in
+          different applications.
+        ` }
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size="4" textColor="heading">Components</Heading>
+        <List>
+          <Appear>
+            <ListItem>the most fundamental part of React</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>building blocks of UI</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>encapsulated DOM structure</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>encapsulated DOM logic</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>automated and optimized DOM interactions</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>reusable and distributable</ListItem>
+          </Appear>
+        </List>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        the importans of commponents as UI building blocks
-      </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        components tree
+      <Slide
+        notes={ `
+          The first thing you're doing when building a React app is splitting it to components.
+          And it's very easy and natural: here app component which contains search and table
+          components, which in turn contain smaller components, etc. It's all about composition.
+          And as I mentioned some components can be published to npm to reuse them in other apps.
+        ` }
+        textColor="main"
+        transition={ [ 'spin' ] }
+      >
+        <Heading size="4" textColor="heading">Thinking in components</Heading>
+        <Appear><Image src={ images.componentsBefore } width="45%" /></Appear>
+        { ' ' }
+        <Appear><Image src={ images.componentsAfter } width="47%" /></Appear>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         component render process and data flow, example, show JSX vs other options
