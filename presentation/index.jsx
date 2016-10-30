@@ -178,6 +178,23 @@ export default () => (
           </List>
         </Appear>
       </Slide>
+      <Slide
+        notes={ `
+          So what is React exactly. In short: it's a view library, a layer taking data and business
+          logic and transforming it into HTML (or other render targets, more about this later). It
+          was deployed to production for the first time in 2011 in Facebook newsfeed and in
+          Instagram in 2012. Open-sourced in 2013. The beautiful part about it and other OSS
+          technologies by Facebook is that they're testing it in production first and only after the
+          tool has shown to be promising, they open-source it. Compare it to, for example, Angular,
+          which was not widely used by Google in production.
+        ` }
+        textColor="main"
+        transition={ [ 'zoom' ] }
+      >
+        <S type="bold">Introducing</S>
+        <Heading size="2" textColor="heading">React</Heading>
+        <Image src={ images.react } width="45%" />
+      </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         <Heading fit={ true } textColor="heading">React to the rescue</Heading>
         less DOM manipulations -> better UI performance
