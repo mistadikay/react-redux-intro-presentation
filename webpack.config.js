@@ -26,21 +26,7 @@ module.exports = {
     }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      loader: "babel-loader",
-      query: {
-        presets:['react', 'es2015'],
-        env: {
-          development: {
-            plugins: [["react-transform", {
-              transforms: [{
-                transform: "react-transform-hmr",
-                imports: ["react"],
-                locals: ["module"]
-              }]
-            }]]
-          }
-        }
-      }
+      loader: "babel-loader"
     }, {
       test: /\.css$/,
       loaders: ["style", "raw"],
@@ -48,6 +34,10 @@ module.exports = {
     }, {
       test: /\.svg$/,
       loader: "url?limit=10000&mimetype=image/svg+xml",
+      include: path.join(__dirname, "assets")
+    }, {
+      test: /\.example/,
+      loader: "raw",
       include: path.join(__dirname, "assets")
     }, {
       test: /\.png$/,

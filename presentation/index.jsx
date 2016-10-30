@@ -10,6 +10,7 @@ import {
   Slide,
   Spectacle
 } from 'spectacle';
+import CodeSlide from 'spectacle-code-slide';
 
 // image preloader util
 import preloader from 'spectacle/lib/utils/preloader';
@@ -17,8 +18,10 @@ import preloader from 'spectacle/lib/utils/preloader';
 // theme
 import createTheme from 'spectacle/lib/themes/default';
 
-// image assets
+// assets
 import * as images from '../assets';
+import Example from '../assets/example.jsx';
+import ExampleSourceCode from '../assets/component.example';
 
 // styles
 import 'normalize.css';
@@ -64,7 +67,7 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size="5" textColor="heading">Internet nowadays</Heading>
+        <Heading size={ 5 } textColor="heading">Internet nowadays</Heading>
         <Image src={ images.reactEverywhere } width="80%" />
       </Slide>
       <Slide
@@ -75,7 +78,7 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size="5" textColor="heading">Holy shit, another Javascript library.</Heading>
+        <Heading size={ 5 } textColor="heading">Holy shit, another Javascript library.</Heading>
         <div>
           <Image src={ images.unamused } width="37%" />
         </div>
@@ -90,7 +93,7 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size="5" textColor="heading">Old ways are working fine.</Heading>
+        <Heading size={ 5 } textColor="heading">Old ways are working fine.</Heading>
         <Image src={ images.fine } width="100%" />
       </Slide>
       <Slide
@@ -118,7 +121,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Heading size="5" textColor="heading">Problems on Frontend</Heading>
+        <Heading size={ 5 } textColor="heading">Problems on Frontend</Heading>
         <List>
           <Appear>
             <ListItem>
@@ -163,7 +166,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Heading size="5" textColor="heading">Possible solutions</Heading>
+        <Heading size={ 5 } textColor="heading">Possible solutions</Heading>
         <Appear>
           <List>
             <ListItem>make only small DOM changes</ListItem>
@@ -192,7 +195,7 @@ export default () => (
         transition={ [ 'zoom' ] }
       >
         <S type="bold">Introducing</S>
-        <Heading size="2" textColor="heading">React</Heading>
+        <Heading size={ 2 } textColor="heading">React</Heading>
         <Image src={ images.react } width="45%" />
       </Slide>
       <Slide
@@ -212,7 +215,7 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size="4" textColor="heading">Components</Heading>
+        <Heading size={ 4 } textColor="heading">Components</Heading>
         <List>
           <Appear>
             <ListItem>the most fundamental part of React</ListItem>
@@ -244,11 +247,46 @@ export default () => (
         textColor="main"
         transition={ [ 'spin' ] }
       >
-        <Heading size="4" textColor="heading">Thinking in components</Heading>
+        <Heading size={ 4 } textColor="heading">Thinking in components</Heading>
         <Appear><Image src={ images.componentsBefore } width="45%" /></Appear>
         { ' ' }
         <Appear><Image src={ images.componentsAfter } width="47%" /></Appear>
       </Slide>
+      <Slide
+        notes={ `
+          Let's look at an example of React component: it has a number, an input and a button.
+          If we put some color code into the input, the number will change the color.
+          If we press the button, the number increases.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Component example</Heading><br />
+        <Example />
+      </Slide>
+      <CodeSlide
+        code={ ExampleSourceCode }
+        lang="jsx"
+        notes={ `
+          Let's discover code of this component line by line
+        ` }
+        ranges={ [
+          { loc: [ 0, 31 ], title: 'Component example: code' },
+          { loc: [ 0, 1 ], note: 'We need React (duh)' },
+          { loc: [ 2, 3 ], note: 'Declare component' },
+          { loc: [ 6, 10 ], note: 'Initial state' },
+          { loc: [ 12, 17 ], note: 'Color handler' },
+          { loc: [ 18, 23 ], note: 'Number handler' },
+          { loc: [ 24, 39 ] },
+          { loc: [ 32, 33 ], note: 'Change input value' },
+          { loc: [ 13, 16 ], note: 'Set new color state' },
+          { loc: [ 29, 32 ], note: 'Rerender!' },
+          { loc: [ 33, 34 ], note: 'Click the button' },
+          { loc: [ 19, 22 ], note: 'Set new value state' },
+          { loc: [ 29, 32 ], note: 'Rerender!' }
+        ] }
+        transition={ [ ] }
+      />
       <Slide textColor="main" transition={ [ 'slide' ] }>
         component render process and data flow, example, show JSX vs other options
       </Slide>

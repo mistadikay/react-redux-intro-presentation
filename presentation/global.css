@@ -1,3 +1,7 @@
 li {
   list-style-position: outside;
 }
+
+input {
+  margin: 0 15px;
+}

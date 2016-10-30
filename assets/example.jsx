@@ -1,0 +1,38 @@
+import React from 'react';
+
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      color: '',
+      value: 0
+    };
+  }
+
+  setColor = (e) => {
+    this.setState({ color: e.target.value });
+  }
+
+  increment = () => {
+    this.setState({ value: this.state.value + 1 });
+  }
+
+  render() {
+    const { color, value } = this.state;
+
+    return (
+      <div>
+        <span style={{ color }}>
+          { value }
+        </span>
+        <input onKeyUp={ this.setColor } />
+        <button onClick={ this.increment }>
+          increase
+        </button>
+      </div>
+    );
+  }
+}
+
+export default Example;
