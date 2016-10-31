@@ -1,0 +1,19 @@
+<span style={{ color }}>
+  { value }
+</span>
+
+↓
+
+<Counter color={{ color }}>
+  { value }
+</Counter>
+
+↓
+
+function Counter(props) {
+  return (
+    <span style={{ color: props.color }}>
+      { props.children }
+    </span>
+  );
+}

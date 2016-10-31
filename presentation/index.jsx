@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Appear,
+  CodePane,
   Deck,
   Heading,
   Image,
@@ -22,6 +23,9 @@ import createTheme from 'spectacle/lib/themes/default';
 import * as images from '../assets';
 import Example from '../assets/example.jsx';
 import ExampleSourceCode from '../assets/component.example';
+import ComponentCounterSourceCode from '../assets/component-counter.example';
+import jsxSourceCode from '../assets/jsx.example';
+import jsxTransformSourceCode from '../assets/jsx-transform.example';
 
 // styles
 import 'normalize.css';
@@ -268,7 +272,10 @@ export default () => (
         code={ ExampleSourceCode }
         lang="jsx"
         notes={ `
-          Let's discover code of this component line by line
+          Let's discover code of this component line by line.
+          ...
+          So basically there are two things that can make the component rerender. First one —
+          changing the state — I shown you in this example, but there is also another option.
         ` }
         ranges={ [
           { loc: [ 0, 31 ], title: 'Component example: code' },
@@ -287,9 +294,70 @@ export default () => (
         ] }
         transition={ [ ] }
       />
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        component render process and data flow, example, show JSX vs other options
+      <CodeSlide
+        code={ ComponentCounterSourceCode }
+        lang="jsx"
+        notes={ `
+          So, in our little example we used component state, but state can also be external and come
+          to the component through props — which is basically just like arguments in functions.
+          So if we take this span from the example before, we can transform it into its own
+          component, but the difference now is that it doesn't have its own state, but instead
+          receives everything from the parent component through props. These components can be
+          described as functions and basically look like templates.
+        ` }
+        ranges={ [
+          { loc: [ 0, 3 ], title: 'Nested components and props' },
+          { loc: [ 6, 9 ] },
+          { loc: [ 12, 19 ] }
+        ] }
+        transition={ [ ] }
+      />
+      <Slide
+        notes={ `
+          To illustrate how exactly this React's tree works, let's take a look at this picture.
+          So you see we have the root component here that holds the state and whenever that state
+          updates we can push it through props to child components and they will update as well.
+          But if we have other components with state down the tree, for example, this one, only its
+          children will be updated, not someone above. So because of this simplicity of one-way
+          data flow it becomes much easier to reason about what's going on in our app and debug it.
+        ` }
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size={ 5 } textColor="heading">One-way data flow</Heading>
+        <Image src={ images.propsFlow } width="80%" />
       </Slide>
+      <Slide
+        notes={ `
+          So, you probably noticed that we used this weird syntax in render — what's that? XML?
+          HTML? Well, that's JSX and I guess it's one of the first things that people notice and it
+          grosses everybody out.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 5 } textColor="heading">JSX</Heading>
+        <CodePane
+          lang="jsx"
+          source={ jsxSourceCode }
+          style={{ fontSize: '24px' }}
+        />
+        <Image src={ images.ew } width="25%" />
+      </Slide>
+      <CodeSlide
+        code={ jsxTransformSourceCode }
+        lang="jsx"
+        notes={ `
+          But in fact JSX is just a syntactic sugare for calling React.createElement. If you don't
+          like it noone forces you to use it — there are alternatives on github and you can write
+          your own.
+        ` }
+        ranges={ [
+          { loc: [ 0, 3 ], title: 'Just syntactic sugar' },
+          { loc: [ 6, 11 ] }
+        ] }
+        transition={ [ ] }
+      />
       <Slide textColor="main" transition={ [ 'slide' ] }>
         Virtual DOM and reconcilation process (mention Fiber)
       </Slide>

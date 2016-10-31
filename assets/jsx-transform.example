@@ -1,0 +1,11 @@
+<button onClick={ this.increment }>
+  increase
+</button>
+
+↓
+
+React.createElement(
+  'button',
+  { onClick: this.increment }
+  'increase'
+);

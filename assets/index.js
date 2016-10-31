@@ -6,5 +6,7 @@ export { default as react } from './react.svg';
 export { default as lego } from './lego.jpg';
 export { default as componentsBefore } from './components-before.png';
 export { default as componentsAfter } from './components-after.png';
+export { default as propsFlow } from './props-flow.png';
+export { default as ew } from './ew.png';
 export { default as smartDumb } from './smart-dumb.jpg';
 export { default as reduxDebug } from './redux-debug.gif';
