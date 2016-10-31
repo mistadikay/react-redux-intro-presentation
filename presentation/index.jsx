@@ -274,8 +274,11 @@ export default () => (
         notes={ `
           Let's discover code of this component line by line.
           ...
-          So basically there are two things that can make the component rerender. First one —
-          changing the state — I shown you in this example, but there is also another option.
+          As you can see there are no conditions or imperative calls here — you just describe how
+          your UI depends on the data and let React do the rest, also you don't have to think about
+          your event handlers, React manages it for you — and this is the part where React
+          leverages the power of reactive programming and it's a very powerful approach, because you
+          need to think about data and your business logic, not about how you UI should be updated.
         ` }
         ranges={ [
           { loc: [ 0, 31 ], title: 'Component example: code' },
@@ -298,7 +301,8 @@ export default () => (
         code={ ComponentCounterSourceCode }
         lang="jsx"
         notes={ `
-          So, in our little example we used component state, but state can also be external and come
+          So basically there are two things that can make the component rerender. First one —
+          changing the state — I shown you in this example, but state can also be external and come
           to the component through props — which is basically just like arguments in functions.
           So if we take this span from the example before, we can transform it into its own
           component, but the difference now is that it doesn't have its own state, but instead
@@ -319,7 +323,8 @@ export default () => (
           updates we can push it through props to child components and they will update as well.
           But if we have other components with state down the tree, for example, this one, only its
           children will be updated, not someone above. So because of this simplicity of one-way
-          data flow it becomes much easier to reason about what's going on in our app and debug it.
+          data flow and using pure functions to describe UI, it becomes much easier to reason about
+          your application, easier to test it and debug.
         ` }
         textColor="main"
         transition={ [ 'fade' ] }
@@ -358,12 +363,34 @@ export default () => (
         ] }
         transition={ [ ] }
       />
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Virtual DOM and reconcilation process (mention Fiber)
+      <Slide
+        notes={ `
+          Okay, we're done with the components, their state and props and found out that jsx
+          is not that scary, but what exactly happens next?
+          When React component attached to the DOM, it renders for the first time and then on
+          every rerender it changes only parts of the DOM that need to be changed.
+          For example, if we change the color of the span it does not rerender the whole span,
+          it just updates style attribute.
+        ` }
+        textColor="main"
+        transition={ [ 'fade' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Talking to the DOM</Heading><br />
+        <Example />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        functional programming: UI is a pure function
-        reactivity: reactive/declarative render
+      <Slide
+        notes={ `
+          It's possible because of this layer between our components and DOM, and it's called
+          virtual DOM. It mirrors DOM to its own data structure and when rerender happens, it
+          compares new render result with the old one and decides which parts of the DOM should be
+          updated if any. This “diffing” called reconcilation process and it what makes React fast
+          and efficient
+        ` }
+        textColor="main"
+        transition={ [ 'zoom' ] }
+      >
+        <Heading size={ 5 } textColor="heading">Virtual DOM</Heading>
+        <Appear><Image src={ images.vdom } width="75%" /></Appear>
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         <Heading>Redux</Heading>
