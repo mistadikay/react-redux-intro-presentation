@@ -392,25 +392,127 @@ export default () => (
         <Heading size={ 5 } textColor="heading">Virtual DOM</Heading>
         <Appear><Image src={ images.vdom } width="75%" /></Appear>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        <Heading>Redux</Heading>
+      <Slide
+        notes={ `
+          Now, I mentioned that React takes care of UI layer and while it's possible to create small
+          apps purely in React, soon you might bump to the problems when trying to scale to a bigger
+          app and add more feautures — something should've manage app internal state and glue all
+          things together.
+
+          In React ecosystem from the very beginning there was this state management solution called
+          Flux which is more of a concept than the actual library. So as always in js-ecosystem
+          lots of libraries emerged until on of them appeared and basically became a standard for
+          state management in React applications.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Appear><Heading textColor="heading">Flux</Heading></Appear>
+        <Appear>
+          <div>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around'
+              }}
+            >
+              <List>
+                <ListItem>Flummox</ListItem>
+                <ListItem>Alt</ListItem>
+                <ListItem>Fluxxor</ListItem>
+                <ListItem>MartyJS</ListItem>
+                <ListItem>Fluxible</ListItem>
+                <ListItem>McFly</ListItem>
+                <ListItem>Delorean</ListItem>
+              </List>
+              <List>
+                <ListItem>Delorean</ListItem>
+                <ListItem>Lux</ListItem>
+                <ListItem>Reflux</ListItem>
+                <ListItem>OmniscientJS</ListItem>
+                <ListItem>Fluxy</ListItem>
+                <ListItem>Material Flux</ListItem>
+              </List>
+            </div>
+          </div>
+        </Appear>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Quickly mention flux with some history and then move to redux
+      <Slide
+        notes={ `
+          This library is called Redux. It was made by a talented developer from St. Petersburg who
+          is working at Facebook now.
+        ` }
+        textColor="main"
+        transition={ [ 'zoom' ] }
+      >
+        <Heading textColor="heading">Redux</Heading>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Three principles
+      <Slide
+        notes={ `
+          There are three main principles of Redux and if you understand these principles — you
+          understand Redux. The rest is implementation details.
+          First: you have only one store where the whole internal state of the app is held. It makes
+          everything much simpler because you have only one source of truth and it becomes really
+          easy to find the data you need.
+          The second one is that state in that single store is read-only. You can not change it
+          directly. You can change your data only through special signals called actions.
+          And finally all the changes are made with pure functions. They called reducers which is
+          just a fancy word for functions changing data and then returning changed data back.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <List>
+          <Appear>
+            <ListItem>
+              <S type="bold">Single source of truth</S>
+              : The whole state of your application is stored just in one place
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">State is read-only</S>
+              : You can not change it from outside directly
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Changes are made with pure-functions</S>
+              : They called reducers and they react to the actions sent by components to change the
+              state
+            </ListItem>
+          </Appear>
+        </List>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Describe data flow in details, but without code examples
+      <Slide
+        notes={ `
+          So data flow might look a bit complex at the first glance, but actually it's really
+          simple.
+          We send data to the action creator.
+          Send after action is created from that data we dispatch it to the Root reducer,
+          along with current state.
+          Root reducer sends it to all small reducers.
+          Small reducers return new data back to the root reducer.
+          Root reducer sends this data to the store.
+          And the store sends it back to React component.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Data flow</Heading>
+        <Image src={ images.reduxDataFlow } width="90%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        Container and presentational components
-        <Image src={ images.smartDumb } />
-      </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        dev-tools with time travel, data visualization, etc.
-        <Image src={ images.reduxDebug } />
+      <Slide
+        notes={ `
+          Because of this simplicity it's easy to do awesome things like time-travel debugging and
+          more. The community behind Redux is huge with helpers and middlewares — and it's actually
+          possible to use Redux outside of React ecosystem since it's not bound to React in any way.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Image src={ images.reduxDebug } width="75%" />
       </Slide>
       <Slide textColor="main" transition={ [ 'slide' ] }>
         React beyound DOM: React Native, React Blessed
