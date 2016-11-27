@@ -11,3 +11,5 @@ export { default as ew } from './ew.png';
 export { default as vdom } from './vdom.png';
 export { default as reduxDataFlow } from './redux-data-flow.png';
 export { default as reduxDebug } from './redux-debug.gif';
+export { default as reactBlessed } from './react-blessed.gif';
+export { default as reactNative } from './react-native.png';

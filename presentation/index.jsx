@@ -514,25 +514,129 @@ export default () => (
       >
         <Image src={ images.reduxDebug } width="75%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        React beyound DOM: React Native, React Blessed
+      <Slide
+        notes={ `
+          It's worth mentioning that we are not talking only about browsers here. For example,
+          React Blessed is a React renderer for a terminal.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Beyound DOM: React Blessed</Heading>
+        <Image src={ images.reactBlessed } width="100%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        React alternatives are awesome too, use them — the idea is important,
-        also React has bigger community. React influenced Ember and Angular
+      <Slide
+        notes={ `
+          Another great example is React Native — it introduced React ecosystem into native mobile
+          apps. It doesn't use DOM for rendering — instead it renders with native UI views, not slow
+          webviews how it usually done when using web-technologies in mobile development. So you get
+          all the advantages of React ecosystem, lower entry barrier, faster feature delivery and
+          great developer experience with things like live-reloading and code-sharing between
+          platforms — and all that with close to native performance. There is also a
+          react-native-macos using React Native and Cocoa to build macOS apps. This list can be
+          continued — the point is React is not about web only, it's a about this new approach of
+          functional and reactive programming principles for building interfaces.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Beyound DOM: React Native</Heading>
+        <Image src={ images.reactNative } width="75%" />
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        examples in production
+      <Slide
+        notes={ `
+          There are plenty of React alternatives some of them are quite awesome too: from cycle.js
+          and Preact to a whole new programming langugages like Elm. The idea is the most important
+          here, though React has much better community and backed by a big company. Also: React
+          hugely influenced new versions of Angualar and Ember, so they're bringing some similar
+          ideas like virtual dom and one-way data flow.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">React alternatives are awesome too</Heading>
+        <List>
+          <ListItem>Cycle.js</ListItem>
+          <ListItem>Preact</ListItem>
+          <ListItem>Deku</ListItem>
+          <ListItem>Om, Om Next, Reagent in ClojureScript</ListItem>
+          <ListItem>html and virtual-dom packages in Elm</ListItem>
+        </List>
       </Slide>
-      <Slide textColor="main" transition={ [ 'slide' ] }>
-        conclusion: why react and redux
-        - automation of manual work, less chance of mistakes
-        - optimising DOM interactions -> great UI performance
-        - flexible, not opinionated like frameworks
-        - simplifies data-flow and makes it predictable
-        - works great for teams, enforcing to follow good patterns
-        - declarative UI code is readable and maintainable
-        - componentization is the future of web development
+      <Slide
+        notes={ `
+          The important thing to mention: adoption rate. And it's been huge for React.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Adoption is HUGE</Heading>
+        <div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-around'
+            }}
+          >
+            <List>
+              <ListItem>Facebook</ListItem>
+              <ListItem>Netflix</ListItem>
+              <ListItem>Airbnb</ListItem>
+              <ListItem>Atlassian</ListItem>
+              <ListItem>BBC</ListItem>
+              <ListItem>Pinterest</ListItem>
+              <ListItem>Postman</ListItem>
+            </List>
+            <List>
+              <ListItem>Reddit</ListItem>
+              <ListItem>Tesla Motors</ListItem>
+              <ListItem>Uber</ListItem>
+              <ListItem>Wired</ListItem>
+              <ListItem>WhatsApp</ListItem>
+              <ListItem>Codeacademy</ListItem>
+              <ListItem>Coursera</ListItem>
+            </List>
+          </div>
+        </div>
+      </Slide>
+      <Slide
+        notes={ `
+          As a conclusion: why react and redux:
+          - automation of manual work, less chance of mistakes
+          - optimising DOM interactions -> great UI performance
+          - flexible, not opinionated like frameworks
+          - simplifies data-flow and makes it predictable
+          - declarative UI code is readable and maintainable
+          - componentization is the future of web development
+          - works great for teams, enforcing to follow good patterns
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Conclusion: why React and Redux</Heading>
+        <List>
+          <ListItem>Automation</ListItem>
+          <ListItem>Performance</ListItem>
+          <ListItem>Flexibility</ListItem>
+          <ListItem>Predictability</ListItem>
+          <ListItem>Declarativity</ListItem>
+          <ListItem>Componentization</ListItem>
+          <ListItem>Great for teams</ListItem>
+        </List>
+      </Slide>
+      <Slide
+        notes={ `
+          Thanks!
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Thanks!</Heading>
+        <br />
+        Slides:
+        <br />
+        <Heading size={ 4 } textColor="heading">goo.gl/zfhjgB</Heading>
       </Slide>
     </Deck>
   </Spectacle>
