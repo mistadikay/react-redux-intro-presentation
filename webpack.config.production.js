@@ -32,8 +32,13 @@ module.exports = {
       loader: "html-loader!markdown-loader?gfm=false"
     }, {
       test: /\.(js|jsx)$/,
+      include: __dirname,
       exclude: /node_modules/,
       loader: "babel-loader"
+    }, {
+        test: /\.example/,
+        loader: "raw",
+        include: path.join(__dirname, "assets")
     }, {
       test: /\.css$/,
       loader: "style-loader!css-loader"
