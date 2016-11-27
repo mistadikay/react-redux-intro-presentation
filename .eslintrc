@@ -16,12 +16,22 @@
 
     "no-extra-parens": [ 2, "functions" ],
     "react/jsx-no-literals": 0,
-    "react/jsx-curly-spacing": 0,
     "no-undef": 2,
+    "react/jsx-curly-spacing": [
+      2,
+      "always",
+      {
+        "allowMultiline": true,
+        "spacing": {
+          "objectLiterals": "never"
+        }}
+    ],
 
-    "no-invalid-this": 0,
     "no-magic-numbers": 0,
-    "id-length": 0,
+    "id-length": [ 2, {
+        "min": 2,
+        "exceptions": [ "x", "y", "z", "e", "i" ]
+    } ],
     "immutable/no-mutation": 0,
   }
 }
