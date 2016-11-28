@@ -102,25 +102,18 @@ export default () => (
       </Slide>
       <Slide
         notes={ `
-          TODO: revisit these problems
           And while I can understand these people, we all cannot deny that there are (were) lots of
           problems when working on user interfaces.
-
-          Performance: any changes to DOM, even when just reading information (getComputedStyle,
+          - Performance: any changes to DOM, even when just reading information (getComputedStyle,
           offsetHeight) causes repaints or reflow which can be a very visible problem
-
-          Efficiency: because we do everything manually — creating DOM, adding events, etc. — it's
+          - Efficiency: because we do everything manually — creating DOM, adding events, etc. — it's
           easy to lose track of node reference or something and create memory leaks
-
-          Complexity: again, because we do everything manually we have to think about it all the
+          - Complexity: again, because we do everything manually we have to think about it all the
           time and the more complexity of our apps grow, the more time we need to support these big
           piles of shit.
-
-          Scalability: when people asked to add a new feature, it can be the pain in the ass and
+          - Scalability: when people asked to add a new feature, it can be the pain in the ass and
           estimates can be enormous and inadecvate
-
-          Reusability: reusing UI code is not obvious, most of the people just copy-past (lazada
-          ahahaha)
+          - Reusability: reusing UI code is not obvious, most of the people just copy-past
         ` }
         textColor="main"
         transition={ [ 'slide' ] }
@@ -162,7 +155,6 @@ export default () => (
       </Slide>
       <Slide
         notes={ `
-          TODO: revisit the solutions along with problems
           Of course, solutions exist, and it's totally possible to solve those problems, but it
           either requires a lot of manual work or using huge and slow frameworks like Ember or
           Angular
@@ -297,6 +289,37 @@ export default () => (
         ] }
         transition={ [ ] }
       />
+      <Slide
+        notes={ `
+          So, you probably noticed that we used this weird syntax in render — what's that? XML?
+          HTML? Well, that's JSX and I guess it's one of the first things that people notice and it
+          grosses everybody out.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 5 } textColor="heading">JSX</Heading>
+        <CodePane
+          lang="jsx"
+          source={ jsxSourceCode }
+          style={{ fontSize: '24px' }}
+        />
+        <Image src={ images.ew } width="25%" />
+      </Slide>
+      <CodeSlide
+        code={ jsxTransformSourceCode }
+        lang="jsx"
+        notes={ `
+          But in fact JSX is just a syntactic sugare for calling React.createElement. If you don't
+          like it noone forces you to use it — there are alternatives on github and you can write
+          your own.
+        ` }
+        ranges={ [
+          { loc: [ 0, 3 ], title: 'Just syntactic sugar' },
+          { loc: [ 6, 11 ] }
+        ] }
+        transition={ [ ] }
+      />
       <CodeSlide
         code={ ComponentCounterSourceCode }
         lang="jsx"
@@ -332,37 +355,6 @@ export default () => (
         <Heading size={ 5 } textColor="heading">One-way data flow</Heading>
         <Image src={ images.propsFlow } width="80%" />
       </Slide>
-      <Slide
-        notes={ `
-          So, you probably noticed that we used this weird syntax in render — what's that? XML?
-          HTML? Well, that's JSX and I guess it's one of the first things that people notice and it
-          grosses everybody out.
-        ` }
-        textColor="main"
-        transition={ [ 'slide' ] }
-      >
-        <Heading size={ 5 } textColor="heading">JSX</Heading>
-        <CodePane
-          lang="jsx"
-          source={ jsxSourceCode }
-          style={{ fontSize: '24px' }}
-        />
-        <Image src={ images.ew } width="25%" />
-      </Slide>
-      <CodeSlide
-        code={ jsxTransformSourceCode }
-        lang="jsx"
-        notes={ `
-          But in fact JSX is just a syntactic sugare for calling React.createElement. If you don't
-          like it noone forces you to use it — there are alternatives on github and you can write
-          your own.
-        ` }
-        ranges={ [
-          { loc: [ 0, 3 ], title: 'Just syntactic sugar' },
-          { loc: [ 6, 11 ] }
-        ] }
-        transition={ [ ] }
-      />
       <Slide
         notes={ `
           Okay, we're done with the components, their state and props and found out that jsx
@@ -636,7 +628,7 @@ export default () => (
         <br />
         Slides:
         <br />
-        <Heading size={ 4 } textColor="heading">goo.gl/zfhjgB</Heading>
+        <Heading size={ 4 } textColor="heading">0x-react.surge.sh</Heading>
       </Slide>
     </Deck>
   </Spectacle>
