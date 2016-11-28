@@ -229,7 +229,7 @@ export default () => (
             <ListItem>automated and optimized DOM interactions</ListItem>
           </Appear>
           <Appear>
-            <ListItem>reusable and distributable</ListItem>
+            <ListItem>reusable, distributable, testable</ListItem>
           </Appear>
         </List>
       </Slide>
@@ -310,7 +310,7 @@ export default () => (
         code={ jsxTransformSourceCode }
         lang="jsx"
         notes={ `
-          But in fact JSX is just a syntactic sugare for calling React.createElement. If you don't
+          But in fact JSX is just a syntactic sugar for calling React.createElement. If you don't
           like it noone forces you to use it — there are alternatives on github and you can write
           your own.
         ` }
@@ -393,7 +393,7 @@ export default () => (
 
           In React ecosystem from the very beginning there was this state management solution called
           Flux which is more of a concept than the actual library. So as always in js-ecosystem
-          lots of libraries emerged until on of them appeared and basically became a standard for
+          lots of libraries emerged until one of them appeared and basically became a standard for
           state management in React applications.
         ` }
         textColor="main"
@@ -433,7 +433,7 @@ export default () => (
       <Slide
         notes={ `
           This library is called Redux. It was made by a talented developer from St. Petersburg who
-          is working at Facebook now.
+          is now working at Facebook in London.
         ` }
         textColor="main"
         transition={ [ 'zoom' ] }
@@ -455,6 +455,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
+        <Heading textColor="heading">Three principles</Heading>
         <List>
           <Appear>
             <ListItem>
@@ -500,6 +501,8 @@ export default () => (
           Because of this simplicity it's easy to do awesome things like time-travel debugging and
           more. The community behind Redux is huge with helpers and middlewares — and it's actually
           possible to use Redux outside of React ecosystem since it's not bound to React in any way.
+          And should I mention: the same idea applied as in React: it's all about composing small
+          understandable and testable pieces.
         ` }
         textColor="main"
         transition={ [ 'slide' ] }
@@ -540,7 +543,7 @@ export default () => (
           There are plenty of React alternatives some of them are quite awesome too: from cycle.js
           and Preact to a whole new programming langugages like Elm. The idea is the most important
           here, though React has much better community and backed by a big company. Also: React
-          hugely influenced new versions of Angualar and Ember, so they're bringing some similar
+          hugely influenced new versions of Angular and Ember, so they're bringing some similar
           ideas like virtual dom and one-way data flow.
         ` }
         textColor="main"
@@ -615,6 +618,20 @@ export default () => (
           <ListItem>Declarativity</ListItem>
           <ListItem>Componentization</ListItem>
           <ListItem>Great for teams</ListItem>
+        </List>
+      </Slide>
+      <Slide
+        notes={ `
+          Thanks!
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading size={ 4 } textColor="heading">Links</Heading>
+        <List>
+          <ListItem><a href="https://github.com/facebook/react/wiki/Sites-Using-React">Sites using React</a><br /><br /></ListItem>
+          <ListItem><a href="https://github.com/enaqx/awesome-react">Collection of resources about React</a><br /><br /></ListItem>
+          <ListItem><a href="https://github.com/xgrommx/awesome-redux">Collection of resources about Redux</a></ListItem>
         </List>
       </Slide>
       <Slide
