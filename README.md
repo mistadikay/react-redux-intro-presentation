@@ -1,7 +1,5 @@
 # Introduction to React and Redux ecosystem
 
-WIP
-
 This presentation is intended as introductory for people not familiar with react/redux ecosystem and its benefits.
 
 Made with [Spectacle](https://github.com/FormidableLabs/spectacle/)
