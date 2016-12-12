@@ -162,9 +162,9 @@ export default () => (
         bgDarken="0.7"
         bgImage={ images.lego }
         notes={ `
-          It's the most fundamental part of React, first-class citizen.
-          It's like lego-cubes you built your interface from.
-          They encapsulate DOM-structure so you don't have to know about it from outside.
+          So whate does React bring to us? First of all: components, the most fundamental part of
+          React, first-class citizen. It's like lego-cubes you built your interface from.
+          They encapsulate DOM-structure and styles, just like templates do
           They encapsulate DOM-logic, so you just work with the state/API and components do the
           rest inside them.
           They automate and optimize all DOM interactions, so you don't have to do manual work and
@@ -175,13 +175,13 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size={ 4 } textColor="heading">Components</Heading>
+        <Heading size={ 4 } textColor="heading">React</Heading>
         <List>
           <Appear>
-            <ListItem>build UI like with Lego cubes</ListItem>
+            <ListItem>build UI with components like with Lego cubes</ListItem>
           </Appear>
           <Appear>
-            <ListItem>encapsulated DOM structure</ListItem>
+            <ListItem>encapsulated DOM structure and styles</ListItem>
           </Appear>
           <Appear>
             <ListItem>encapsulated DOM logic</ListItem>
@@ -293,8 +293,8 @@ export default () => (
           to the component through props — which is basically just like arguments in functions.
           So if we take this span from the example before, we can transform it into its own
           component, but the difference now is that it doesn't have its own state, but instead
-          receives everything from the parent component through props. These components can be
-          described as functions and basically look like templates.
+          receives everything from the parent component through props. By the way if you don't need
+          to store the state inside component, you can use function instead of class.
         ` }
         ranges={ [
           { loc: [ 0, 3 ], title: 'Nested components and props' },
@@ -331,7 +331,7 @@ export default () => (
         textColor="main"
         transition={ [ 'fade' ] }
       >
-        <Heading size={ 4 } textColor="heading">Talking to the DOM</Heading><br />
+        <Heading size={ 4 } textColor="heading">Rerendering</Heading><br />
         <Example />
       </Slide>
       <Slide
@@ -360,7 +360,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Heading size={ 4 } textColor="heading">State management — why bother?</Heading>
+        <Heading size={ 4 } textColor="heading">Application store</Heading>
         <List>
           <Appear>
             <ListItem>separate business logic from presentation</ListItem>
@@ -373,6 +373,9 @@ export default () => (
           </Appear>
           <Appear>
             <ListItem>data persistency/cache</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>decoupling and testability</ListItem>
           </Appear>
         </List>
       </Slide>
@@ -433,7 +436,7 @@ export default () => (
           everything much simpler because you have only one source of truth and it becomes really
           easy to find the data you need.
           The second one is that state in that single store is read-only. You can not change it
-          directly. You can change your data only through special signals called actions.
+          directly. You can change your data only through special events called actions.
           And finally all the changes are made with pure functions. They called reducers which is
           just a fancy word for functions changing data and then returning changed data back.
         ` }
@@ -445,35 +448,28 @@ export default () => (
           <Appear>
             <ListItem>
               <S type="bold">Single source of truth</S>
-              : The whole state of your application is stored just in one place
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
-              <S type="bold">State is read-only</S>
-              : You can not change it from outside directly
+              <S type="bold">State is read-only (immutable)</S>
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
               <S type="bold">Changes are made with pure-functions</S>
-              : They called reducers and they react to the actions sent by components to change the
-              state
             </ListItem>
           </Appear>
         </List>
       </Slide>
       <Slide
         notes={ `
-          So data flow might look a bit complex at the first glance, but actually it's really
-          simple.
-          We send data to the action creator.
-          Send after action is created from that data we dispatch it to the Root reducer,
-          along with current state.
-          Root reducer sends it to all small reducers.
-          Small reducers return new data back to the root reducer.
-          Root reducer sends this data to the store.
-          And the store sends it back to React component.
+          So data flow is essentially simple:
+          UI creates actions which are being sent to reducers.
+          Along the line side effects can be involved like calling an API or interacting with
+          a router or a browser.
+          When reducers receives an action, they transform data in the store and then that updated
+          data is being sent back to UI.
         ` }
         textColor="main"
         transition={ [ 'slide' ] }
