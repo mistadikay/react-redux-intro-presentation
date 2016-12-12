@@ -475,7 +475,7 @@ export default () => (
         transition={ [ 'slide' ] }
       >
         <Heading size={ 4 } textColor="heading">Data flow</Heading>
-        <Image src={ images.reduxDataFlow } style={{ backgroundColor: '#fff' }} width="90%" />
+        <Image src={ images.reduxDataFlow } style={{ backgroundColor: '#fff' }} width="65%" />
       </Slide>
       <Slide
         notes={ `
