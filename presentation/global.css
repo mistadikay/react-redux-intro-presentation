@@ -19,3 +19,17 @@ a {
   background: url('/assets/0x-logo.svg');
   background-size: 100px 50px;
 }
+
+/* overriding inline styles :-/ */
+.spectacle-presenter-main,
+.spectacle-presenter-next {
+  height: 50% !important;
+  margin-top: 20% !important;
+}
+
+.spectacle-presenter-notes {
+  height: 100% !important;
+  column-count: 1 !important;
+  padding: 10% !important;
+  font-size: 20px !important;
+}
