@@ -10,10 +10,6 @@
     "import/extensions": [ ".js", ".jsx" ]
   },
   "rules": {
-    "indent": [ 2, 2, { "SwitchCase": 1 } ],
-    "react/jsx-indent": [ 2, 2 ],
-    "react/jsx-indent-props": [ 2, 2 ],
-
     "no-extra-parens": [ 2, "functions" ],
     "react/jsx-no-literals": 0,
     "no-undef": 2,
@@ -27,6 +23,7 @@
         }}
     ],
 
+    "react/jsx-tag-spacing": 0,
     "no-magic-numbers": 0,
     "id-length": [ 2, {
         "min": 2,
