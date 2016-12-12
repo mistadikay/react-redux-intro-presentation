@@ -87,33 +87,32 @@ export default () => (
         <List>
           <Appear>
             <ListItem>
-              <S type="bold">Performance</S>
-               - making changes to the DOM is slow due to repaint and reflow
+              <S type="bold">Performance</S> - DOM is slow
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
-              <S type="bold">Efficiency</S>
-              - you can end up creating memory leaks by losing track of node
-              references or by forgetting to detach event handlers
+              <S type="bold">Efficiency</S> - memory leaks
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
-              <S type="bold">Complexity</S>
-              - hard to maintain, hard to understand
+              <S type="bold">Complexity</S> - hard to maintain, hard to understand
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
-              <S type="bold">Scalability</S>
-              - hard to add new features and change design
+              <S type="bold">Scalability</S> - hard to add new features and change design
             </ListItem>
           </Appear>
           <Appear>
             <ListItem>
-              <S type="bold">Reusability</S>
-              - hard to reuse UI code across different websites and applications
+              <S type="bold">Reusability</S> - hard to reuse UI code
+            </ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>
+              <S type="bold">Testability</S> - not trivial
             </ListItem>
           </Appear>
         </List>
@@ -179,10 +178,7 @@ export default () => (
         <Heading size={ 4 } textColor="heading">Components</Heading>
         <List>
           <Appear>
-            <ListItem>the most fundamental part of React</ListItem>
-          </Appear>
-          <Appear>
-            <ListItem>building blocks of UI</ListItem>
+            <ListItem>build UI like with Lego cubes</ListItem>
           </Appear>
           <Appear>
             <ListItem>encapsulated DOM structure</ListItem>
@@ -195,6 +191,9 @@ export default () => (
           </Appear>
           <Appear>
             <ListItem>reusable, distributable, testable</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>can be prerendered on the server!</ListItem>
           </Appear>
         </List>
       </Slide>
@@ -247,10 +246,10 @@ export default () => (
           { loc: [ 24, 39 ] },
           { loc: [ 32, 33 ], note: 'Change input value' },
           { loc: [ 13, 16 ], note: 'Set new color state' },
-          { loc: [ 29, 32 ], note: 'Rerender!' },
+          { loc: [ 24, 39 ], note: 'Rerender!' },
           { loc: [ 33, 34 ], note: 'Click the button' },
           { loc: [ 19, 22 ], note: 'Set new value state' },
-          { loc: [ 29, 32 ], note: 'Rerender!' }
+          { loc: [ 24, 39 ], note: 'Rerender!' }
         ] }
         transition={ [ ] }
       />
@@ -361,7 +360,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Heading textColor="heading">State management</Heading>
+        <Heading size={ 4 } textColor="heading">State management — why bother?</Heading>
         <List>
           <Appear>
             <ListItem>separate business logic from presentation</ListItem>
@@ -480,7 +479,7 @@ export default () => (
         transition={ [ 'slide' ] }
       >
         <Heading size={ 4 } textColor="heading">Data flow</Heading>
-        <Image src={ images.reduxDataFlow } width="90%" style={{ backgroundColor: '#fff' }} />
+        <Image src={ images.reduxDataFlow } style={{ backgroundColor: '#fff' }} width="90%" />
       </Slide>
       <Slide
         notes={ `
@@ -535,7 +534,7 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Heading size={ 4 } textColor="heading">React alternatives are awesome too</Heading>
+        <Heading size={ 4 } textColor="heading">React alternatives</Heading>
         <List>
           <ListItem>Cycle.js</ListItem>
           <ListItem>Preact</ListItem>
