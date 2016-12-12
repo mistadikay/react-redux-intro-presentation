@@ -356,6 +356,29 @@ export default () => (
           app and add more feautures — something should've manage app internal state and glue all
           things together.
 
+          So you might need a solution for state management. And there are a few reasons for that.
+        ` }
+        textColor="main"
+        transition={ [ 'slide' ] }
+      >
+        <Heading textColor="heading">State management</Heading>
+        <List>
+          <Appear>
+            <ListItem>separate business logic from presentation</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>optimistic updates</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>complex client logic</ListItem>
+          </Appear>
+          <Appear>
+            <ListItem>data persistency/cache</ListItem>
+          </Appear>
+        </List>
+      </Slide>
+      <Slide
+        notes={ `
           In React ecosystem from the very beginning there was this state management solution called
           Flux which is more of a concept than the actual library. So as always in js-ecosystem
           lots of libraries emerged until one of them appeared and basically became a standard for
@@ -364,36 +387,34 @@ export default () => (
         textColor="main"
         transition={ [ 'slide' ] }
       >
-        <Appear><Heading textColor="heading">Flux</Heading></Appear>
-        <Appear>
-          <div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around'
-              }}
-            >
-              <List>
-                <ListItem>Flummox</ListItem>
-                <ListItem>Alt</ListItem>
-                <ListItem>Fluxxor</ListItem>
-                <ListItem>MartyJS</ListItem>
-                <ListItem>Fluxible</ListItem>
-                <ListItem>McFly</ListItem>
-                <ListItem>Delorean</ListItem>
-              </List>
-              <List>
-                <ListItem>Delorean</ListItem>
-                <ListItem>Lux</ListItem>
-                <ListItem>Reflux</ListItem>
-                <ListItem>OmniscientJS</ListItem>
-                <ListItem>Fluxy</ListItem>
-                <ListItem>Material Flux</ListItem>
-              </List>
-            </div>
+        <Heading textColor="heading">Flux</Heading>
+        <div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-around'
+            }}
+          >
+            <List>
+              <ListItem>Flummox</ListItem>
+              <ListItem>Alt</ListItem>
+              <ListItem>Fluxxor</ListItem>
+              <ListItem>MartyJS</ListItem>
+              <ListItem>Fluxible</ListItem>
+              <ListItem>McFly</ListItem>
+              <ListItem>Delorean</ListItem>
+            </List>
+            <List>
+              <ListItem>Delorean</ListItem>
+              <ListItem>Lux</ListItem>
+              <ListItem>Reflux</ListItem>
+              <ListItem>OmniscientJS</ListItem>
+              <ListItem>Fluxy</ListItem>
+              <ListItem>Material Flux</ListItem>
+            </List>
           </div>
-        </Appear>
+        </div>
       </Slide>
       <Slide
         notes={ `
@@ -518,9 +539,9 @@ export default () => (
         <List>
           <ListItem>Cycle.js</ListItem>
           <ListItem>Preact</ListItem>
-          <ListItem>Deku</ListItem>
-          <ListItem>Om, Om Next, Reagent in ClojureScript</ListItem>
-          <ListItem>html and virtual-dom packages in Elm</ListItem>
+          <ListItem>Vue.js</ListItem>
+          <ListItem>Om, Rum, Reagent in ClojureScript</ListItem>
+          <ListItem>html and virtual-dom in Elm</ListItem>
         </List>
       </Slide>
       <Slide
